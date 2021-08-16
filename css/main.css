@@ -52,6 +52,9 @@ html, body {
   width: 100%;
   max-width: unset;
 }
+.container--no-padding {
+  padding: 0;
+}
 
 .logo {
   display: flex;
@@ -165,10 +168,35 @@ html, body {
   background-color: #F78434;
   font-weight: 700;
   color: #ffffff;
-  transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 .button:hover {
   background-color: #ff6a00;
+}
+.button--white {
+  background-color: #ffffff;
+  color: #323232;
+}
+.button--white:hover {
+  background-color: #323232;
+  color: #ffffff;
+}
+.button--play {
+  position: relative;
+  padding-left: 50px;
+}
+.button--play::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-image: url("./../img/icons/play.svg");
+  background-size: initial;
+  background-repeat: no-repeat;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .clients {
@@ -189,6 +217,12 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
+}
+@media (max-width: 1495px) {
+  .objects__row {
+    justify-content: flex-end;
+  }
 }
 .objects__img {
   display: flex;
@@ -196,8 +230,10 @@ html, body {
   align-items: flex-start;
 }
 .objects__text {
-  max-width: 543px;
+  max-width: 693px;
   padding-left: 181px;
+  flex-shrink: 0;
+  padding-right: 150px;
 }
 .objects__text p + p {
   margin-top: 20px;
@@ -247,4 +283,39 @@ html, body {
 }
 .card-info__title {
   font-weight: 700;
+}
+
+.cta {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.cta__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #58BEBF;
+  border-radius: 20px;
+  color: #ffffff;
+  padding-right: 95px;
+}
+.cta__text {
+  width: 374px;
+}
+.cta__text p {
+  width: 320px;
+}
+.cta__title {
+  margin-bottom: 15px;
+}
+.cta__img {
+  margin-top: 60px;
+  padding-top: 25px;
+  padding-right: 25px;
+  background-color: #ffffff;
+  border-radius: 0 20px 0 0;
+}
+.cta__buttons-row {
+  margin-top: 30px;
+  display: flex;
+  column-gap: 20px;
 }
